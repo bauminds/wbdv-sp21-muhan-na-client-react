@@ -1,0 +1,25 @@
+.wbdv-sticky-nav-bar {
+    background-color: lightblue;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.container {
+    padding-top: 5em;
+}
+
+.row-styling {
+    border-bottom: 0.1px solid lightblue;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.table-styling {
+    padding-top: 6em;
+}
+
+.grid-styling {
+    padding-top: 6em;
+}
