@@ -27,3 +27,12 @@
 .list-group-item.active a {
   color: white;
 }
+
+.lesson-tabs-styling {
+  border-bottom: 1px solid lightGray;
+  padding-bottom: 10px;
+}
+
+.topic-pills-styling {
+  padding-top: 10px;
+}

@@ -21,7 +21,6 @@ const LessonTabs = (
     }, [moduleId])
     return(
     <div>
-        <h2>Lessons</h2>
         <ul className="nav nav-pills">
             {
                 lessons.map(lesson =>
@@ -29,6 +28,8 @@ const LessonTabs = (
                         <EditableItem
                             active={lesson._id === lessonId}
                             to={`/courses/editor/${courseId}/${moduleId}/${lesson._id}`}
+                            updateItem={updateLesson}
+                            deleteItem={deleteLesson}
                             item={lesson}/>
                     </li>
                 )
@@ -65,7 +66,7 @@ const dtpm = (dispatch) => ({
         lessonService.deleteLesson(lesson._id)
             .then(status => dispatch({
                 type: "DELETE_LESSON",
-                moduleToDelete: lesson
+                lessonToDelete: lesson
             })),
     updateLesson: (lesson) =>
         lessonService.updateLesson(lesson._id, lesson)

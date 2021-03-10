@@ -11,6 +11,11 @@ const EditableItem = (
     }) => {
     const [editing, setEditing] = useState(false)
     const [cachedItem, setCachedItem] = useState(item)
+
+    const deleteAnItem = (itemToDelete) => {
+        setEditing(false)
+        deleteItem(itemToDelete)
+    }
     return (
         <>
             {
@@ -36,7 +41,7 @@ const EditableItem = (
                         setEditing(false)
                         updateItem(cachedItem)
                     }} className="fas fa-check"></i>
-                    <i onClick={() => deleteItem(item)} className="fas fa-times"></i>
+                    <i onClick={() => deleteAnItem(item)} className="fas fa-times"></i>
                 </>
             }
         </>
