@@ -1,6 +1,5 @@
 .container {
     margin-top: 5em;
-    background-color: #add8e6;
 }
 
 .inline {
@@ -8,26 +7,17 @@
 }
 
 .heading-styling {
-    color: white;
 }
 
 .module-styling {
-    background-color: #adc9e6;
-    border: 6px solid #add8e6;
-    color: white;
 }
 
 .tag-styling {
-    color: white;
 }
 
 .pill-styling {
-    background-color: #add8e6;
-    color: white;
-    border: 12px solid white;
 }
 
 .contentContainer {
-    background-color: white;
     height: 80%;
 }

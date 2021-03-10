@@ -33,7 +33,7 @@ const CourseRow = (
         <div className="col-6 d-md-block tableRow">
             {
                 !editing &&
-                <Link to="/courses/editor">
+                <Link to={`/courses/editor/${course._id}`}>
                     <i class="fas fa-file"></i>
                     {title}
                 </Link>

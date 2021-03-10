@@ -23,3 +23,7 @@
 .grid-styling {
     padding-top: 6em;
 }
+
+.list-group-item.active a {
+  color: white;
+}
