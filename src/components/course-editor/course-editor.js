@@ -1,9 +1,10 @@
 import React from 'react'
-import {Link, useParams} from "react-router-dom";
-import moduleReducer from "../reducers/modules-reducer";
-import lessonReducer from "../reducers/lesson-reducer";
-import topicReducer from "../reducers/topic-reducer"
+import {Link, useParams, Route} from "react-router-dom";
+
 import {combineReducers, createStore} from "redux";
+import moduleReducer from "../../reducers/modules-reducer";
+import lessonReducer from "../../reducers/lesson-reducer";
+import topicReducer from "../../reducers/topic-reducer";
 import {Provider} from "react-redux";
 import ModuleList from "./module-list";
 import LessonTabs from "./lesson-tabs";
@@ -28,7 +29,8 @@ const CourseEditor = ({history}) => {
                 <Link to="/courses/table">
                     <i className="fas fa-arrow-left"></i>
                 </Link>
-                Course Editor
+                Course Name
+
                 <i onClick={() => history.goBack()}
                    className="fas fa-times float-right"></i>
                 {/*<i onClick={() => props.history.goBack()}*/}

@@ -47,7 +47,7 @@ const CourseCard = (
                 <p className="card-text">Some description
                   content.</p>
                   <img src={``}/>
-                <Link to="/courses/editor" className="btn btn-primary">
+                <Link to={`/courses/grid/edit/${course._id}`} className="btn btn-primary">
                     {course.title}
                 </Link>
                 {editing && <i onClick={() => deleteACourse(course)} className="fas fa-times float-right"></i>}

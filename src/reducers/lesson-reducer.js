@@ -38,6 +38,14 @@ const lessonReducer = (state=initialState, action) => {
                     }
                 })
             }
+        case "FIND_LESSON":
+            return {
+                lessons:state.lessons.map(lesson => {
+                    if (lesson._id == action.lesson._id) {
+                        return lesson
+                    }
+                })
+            }
         default:
             return state
     }

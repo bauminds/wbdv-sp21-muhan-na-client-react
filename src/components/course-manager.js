@@ -1,7 +1,7 @@
 import React from 'react'
 import CourseTable from "./course-table";
 import CourseGrid from "./course-grid";
-import CourseEditor from "./course-editor";
+import CourseEditor from "./course-editor/course-editor";
 import {Link, Route} from "react-router-dom";
 import courseService, {findAllCourses, deleteCourse} from "../services/course-service";
 
@@ -91,14 +91,14 @@ class CourseManager extends React.Component {
   render() {
     return(
       <div>
-        <Route path="/courses/table">
+        <Route path="/courses/table" exact={true}>
           <CourseTable
               addCourse={this.addCourse}
               updateCourse={this.updateCourse}
               deleteCourse={this.deleteCourse}
               courses={this.state.courses}/>
         </Route>
-        <Route path="/courses/grid">
+        <Route path="/courses/grid" exact={true}>
           <CourseGrid
               addCourse={this.addCourse}
               updateCourse={this.updateCourse}
@@ -112,10 +112,16 @@ class CourseManager extends React.Component {
           {/*       render={(props) => <CourseEditor props={props}/>}>*/}
           {/*</Route>*/}
         <Route path={[
-            "/courses/editor/:courseId",
-            "/courses/editor/:courseId/:moduleId",
-            "/courses/editor/:courseId/:moduleId/:lessonId",
-            "/courses/editor/:courseId/:moduleId/:lessonId/:topicId"]}
+            "/courses/:layout/edit/:courseId",
+            "/courses/:layout/edit/:courseId/:moduleId",
+            "/courses/:layout/edit/:courseId/:moduleId/:lessonId",
+            "/courses/:layout/edit/:courseId/:moduleId/:lessonId/:topicId"
+
+//            "/courses/editor/:courseId",
+//            "/courses/editor/:courseId/:moduleId",
+//            "/courses/editor/:courseId/:moduleId/:lessonId",
+//            "/courses/editor/:courseId/:moduleId/:lessonId/:topicId"
+        ]}
                exact={true}
                render={(props) => <CourseEditor {...props}/>}>
         </Route>

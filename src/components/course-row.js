@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Link} from "react-router-dom";
+import {Link, Route, BrowserRouter} from "react-router-dom";
 
 const CourseRow = (
     {
@@ -33,8 +33,7 @@ const CourseRow = (
         <div className="col-6 d-md-block tableRow">
             {
                 !editing &&
-                <Link to={`/courses/editor/${course._id}`}>
-                    <i class="fas fa-file"></i>
+                <Link to={`/courses/table/edit/${course._id}`}>
                     {title}
                 </Link>
             }

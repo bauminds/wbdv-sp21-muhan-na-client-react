@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react'
 import {connect} from "react-redux";
-import EditableItem from "./editable-item";
+import EditableItem from "../editable-item";
 import {useParams} from "react-router-dom";
-import topicService from '../services/topic-service'
+import topicService from '../../services/topic-service'
+import lessonService from "../../services/lesson-service"
 
 
 const TopicPills = (
@@ -16,7 +17,8 @@ const TopicPills = (
     const {courseId, moduleId, lessonId, topicId} = useParams();
     useEffect(() => {
         console.log("LOAD TOPICS FOR LESSON: " + topicId)
-        if(lessonId !== "undefined" && typeof lessonId !== "undefined") {
+        if(moduleId !== "undefined" && typeof moduleId !== "undefined" &&
+            lessonId !== "undefined" && typeof lessonId !== "undefined") {
             findTopicsForLesson(lessonId)
         }
     }, [lessonId])
@@ -28,7 +30,7 @@ const TopicPills = (
                     <li className="nav-item">
                         <EditableItem
                             active={topic._id === topicId}
-                            to={`/courses/editor/${courseId}/${moduleId}/${lessonId}/${topic._id}`}
+                            to={`/courses/:layout/edit/${courseId}/${moduleId}/${lessonId}/${topic._id}`}
                             updateItem={updateTopic}
                             deleteItem={deleteTopic}
                             item={topic}/>

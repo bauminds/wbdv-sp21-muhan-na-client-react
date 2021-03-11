@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
-import EditableItem from "./editable-item";
+import EditableItem from "../editable-item";
 import {useParams} from "react-router-dom";
-import moduleService from "../services/module-service"
+import moduleService from "../../services/module-service"
 
 const ModuleList = (
     {
@@ -19,13 +19,12 @@ const ModuleList = (
     }, [])
     return(
     <div>
-        <h2>Course Name</h2>
         <ul className="list-group">
             {
                 myModules.map(module =>
                     <li className={`list-group-item ${module._id === moduleId ? 'active' : ''}`}>
                         <EditableItem
-                            to={`/courses/editor/${courseId}/${module._id}`}
+                            to={`/courses/:layout/edit/${courseId}/${module._id}`}
                             updateItem={updateModule}
                             deleteItem={deleteModule}
                             active={true}
