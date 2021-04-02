@@ -2,6 +2,10 @@ const MODULES_URL = "https://wbdv-generic-server.herokuapp.com/api/001400298/mod
 const COURSES_URL = "https://wbdv-generic-server.herokuapp.com/api/001400298/courses";
 const LESSONS_URL = "https://wbdv-generic-server.herokuapp.com/api/001400298/lessons";
 
+//const COURSES_URL = "https://wbdv-sp21-muhan-na-react.herokuapp.com/api/courses";
+//const MODULES_URL = "https://wbdv-sp21-muhan-na-react.herokuapp.com/api/modules";
+//const LESSONS_URL = "https://wbdv-sp21-muhan-na-react.herokuapp.com/api/lessons";
+
 export const createLessonForModule = (moduleId, lesson) =>
     fetch(`${MODULES_URL}/${moduleId}/lessons`, {
         method: "POST",

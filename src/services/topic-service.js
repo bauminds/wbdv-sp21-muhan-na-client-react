@@ -3,6 +3,11 @@ const COURSES_URL = "https://wbdv-generic-server.herokuapp.com/api/001400298/cou
 const LESSONS_URL = "https://wbdv-generic-server.herokuapp.com/api/001400298/lessons";
 const TOPICS_URL = "https://wbdv-generic-server.herokuapp.com/api/001400298/topics";
 
+//const COURSES_URL = "https://wbdv-sp21-muhan-na-react.herokuapp.com/api/courses";
+//const MODULES_URL = "https://wbdv-sp21-muhan-na-react.herokuapp.com/api/modules";
+//const LESSONS_URL = "https://wbdv-sp21-muhan-na-react.herokuapp.com/api/lessons";
+//const TOPICS_URL = "https://wbdv-sp21-muhan-na-react.herokuapp.com/api/topics";
+
 export const createTopicForLesson = (lessonId, topic) =>
     fetch(`${LESSONS_URL}/${lessonId}/topics`, {
         method: "POST",

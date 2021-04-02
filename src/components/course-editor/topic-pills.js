@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {connect} from "react-redux";
 import EditableItem from "../editable-item";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import topicService from '../../services/topic-service'
 import lessonService from "../../services/lesson-service"
 
@@ -31,6 +31,7 @@ const TopicPills = (
                         <EditableItem
                             active={topic._id === topicId}
                             to={`/courses/:layout/edit/${courseId}/${moduleId}/${lessonId}/${topic._id}`}
+//                            Link to={`/courses/:layout/edit/${courseId}/${moduleId}/${lessonId}/ABC123`}
                             updateItem={updateTopic}
                             deleteItem={deleteTopic}
                             item={topic}/>

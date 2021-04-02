@@ -1,6 +1,9 @@
 const COURSES_URL = "https://wbdv-generic-server.herokuapp.com/api/001400298/courses";
 const MODULES_URL = "https://wbdv-generic-server.herokuapp.com/api/001400298/modules";
 
+//const COURSES_URL = "https://wbdv-sp21-muhan-na-react.herokuapp.com/api/courses";
+//const MODULES_URL = "https://wbdv-sp21-muhan-na-react.herokuapp.com/api/modules";
+
 export const createModuleForCourse = (courseId, module) =>
     fetch(`${COURSES_URL}/${courseId}/modules`, {
         method: "POST",
