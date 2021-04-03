@@ -8,8 +8,6 @@ import ImageWidget from "./image-widget";
 import widgetService from "../../../services/widget-service"
 import WidgetActions from "../../../actions/widget-actions"
 
-
-
 const WidgetList = (
     {
         widgets = [],
@@ -32,7 +30,7 @@ const WidgetList = (
             {/*<h2>Widget List ({widgets.length}) {editingWidget.id}</h2>*/}
             <ul className="list-group">
                 {
-                    widgets.map(widget =>
+                    widgets && widgets.map(widget =>
                     <li className="list-group-item" key={widget.id}>
 
                         {

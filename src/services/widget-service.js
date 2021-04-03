@@ -4,6 +4,9 @@
 //const TOPICS_URL = "https://wbdv-generic-server.herokuapp.com/api/001400298/topics";
 //const WIDGETS_URL = "https://wbdv-generic-server.herokuapp.com/api/001400298/widgets";
 
+//const TOPICS_URL = "https://wbdv-sp21-muhan-na-react.herokuapp.com/api/topics";
+//const WIDGETS_URL = "https://wbdv-sp21-muhan-na-react.herokuapp.com/api/widgets";
+
 const TOPICS_URL = "http://localhost:8080/api/topics";
 const WIDGETS_URL = "http://localhost:8080/api/widgets";
 
