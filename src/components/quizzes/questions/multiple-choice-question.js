@@ -1,11 +1,18 @@
 import React, {useState} from "react";
+import quizService from "../../../services/quiz-service"
 
 const MultipleChoiceQuestion = ({question}) => {
     const [yourAnswer, setYourAnswer] = useState("")
     const [submitted, setSubmitted] = useState(false)
-    const grade = () => {
+    const [attempts, setAttempts] = useState([])
+
+    const submit = (quizId) => {
         setSubmitted(true)
+        quizService.submitQuiz(quizId, question).then(attempt => {
+            setAttempts(attempt)
+        })
     }
+
     return(
         <div>
             <h5>
@@ -37,7 +44,7 @@ const MultipleChoiceQuestion = ({question}) => {
                 Your answer: {yourAnswer}
             </p>
             <div>
-                <button className="btn btn-success" onClick={() => setSubmitted(true)}>Grade</button>
+                <button className="btn btn-success" onClick={() => submit()}>Submit</button>
             </div>
         </div>
     )

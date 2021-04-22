@@ -1,10 +1,12 @@
 import React, {useState} from "react";
+import quizService from "../../../services/quiz-service"
 
 const TrueFalseQuestion = ({question}) => {
     const [answer, setAnswer] = useState(null)
     const [submitted, setSubmitted] = useState(false)
-    const grade = () => {
+    const submit = () => {
         setSubmitted(true)
+
     }
     return (
         <div>
@@ -36,7 +38,7 @@ const TrueFalseQuestion = ({question}) => {
                 </li>
             </ul>
             <div>
-                <button className="btn btn-success" onClick={() => setSubmitted(true)}>Grade</button>
+                <button className="btn btn-success" onClick={() => submit()}>Submit</button>
             </div>
         </div>
     )
